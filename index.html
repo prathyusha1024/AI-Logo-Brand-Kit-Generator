@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Logo & Brand Kit Generator</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928DAB, #2c3e50, #bdc3c7);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      transition: transform 0.4s ease, background 0.3s ease;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .logo-card:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    @keyframes slideUp {
+      0% {transform: translateY(30px); opacity: 0;}
+      100% {transform: translateY(0); opacity: 1;}
+    }
+
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+      animation: spinIcon 6s linear infinite;
+    }
+
+    @keyframes spinIcon {
+      0% {transform: rotateY(0deg);}
+      100% {transform: rotateY(360deg);}
+    }
+
+    .logo-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ AI Logo & Brand Kit Generator</h1>
+
+  <div class="logo-grid" id="logoGrid">
+    <!-- Logos will be inserted here -->
+  </div>
+
+  <footer>
+    Built with ❤️ using HTML, CSS, JS · AI-powered creativity
+  </footer>
+
+  <script>
+    const logos = [
+      {
+        name: "NovaTech",
+        tagline: "Innovating the Future",
+        icon: "https://img.icons8.com/external-justicon-flat-justicon/64/ffffff/external-artificial-intelligence-data-science-justicon-flat-justicon.png"
+      },
+      {
+        name: "EcoSphere",
+        tagline: "Green Energy Solutions",
+        icon: "https://img.icons8.com/color/96/leaf.png"
+      },
+      {
+        name: "ByteForge",
+        tagline: "Code. Build. Deploy.",
+        icon: "https://img.icons8.com/ios-filled/100/ffffff/source-code.png"
+      },
+      {
+        name: "ZenCommerce",
+        tagline: "Balance in E-Commerce",
+        icon: "https://img.icons8.com/color/96/shopping-cart-loaded.png"
+      },
+      {
+        name: "AuraLens",
+        tagline: "See Beyond Reality",
+        icon: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-vision-augmented-reality-flaticons-lineal-color-flat-icons.png"
+      },
+      {
+        name: "PulseTrack",
+        tagline: "Monitor. Optimize. Live.",
+        icon: "https://img.icons8.com/fluency/96/heart-with-pulse.png"
+      },
+      {
+        name: "NeuraCloud",
+        tagline: "Smarter Cloud Storage",
+        icon: "https://img.icons8.com/color/96/cloud.png"
+      },
+      {
+        name: "CreativeFlow",
+        tagline: "Design Your Imagination",
+        icon: "https://img.icons8.com/color/96/design.png"
+      }
+    ];
+
+    const logoGrid = document.getElementById('logoGrid');
+
+    logos.forEach(logo => {
+      const card = document.createElement('div');
+      card.className = 'logo-card';
+      card.innerHTML = `
+        <img class="logo-icon" src="${logo.icon}" alt="${logo.name} Logo">
+        <div class="logo-name">${logo.name}</div>
+        <div class="tagline">${logo.tagline}</div>
+      `;
+      logoGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
